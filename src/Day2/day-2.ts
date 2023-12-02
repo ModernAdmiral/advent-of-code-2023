@@ -131,7 +131,6 @@ const cubeCountPart1 = (
   return finalAnswer;
 };
 
-// Iterate through the object and return isValid count
 
 console.log(
   cubeCountPart1(parseData(testData).parsedDataObject),
