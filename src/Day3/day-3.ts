@@ -170,6 +170,7 @@ const populatePositions = (data: string[][]): GameObject => {
   }
   return gameObject;
 };
+
 const populateAdjacency = () => {
   const directions = [
     // up, down, left, right
@@ -232,7 +233,6 @@ const populateAdjacency = () => {
             }
           });
 
-          // Update symbols
           const symbolEntry = symbols[symbol].find(
             (entry) => entry.row === row && entry.col === col
           );
@@ -266,9 +266,7 @@ const part1Answer = (): number => {
   Object.keys(gameObject).forEach((key: string) => {
     const numKey = parseInt(key);
 
-    // Iterate over each instance of the number
     gameObject[numKey].forEach((info) => {
-      // If the instance is adjacent to any symbol, add the number to the sum
       if (info.isAdjacentToSymbols.length > 0) {
         sum += numKey;
       }
@@ -297,4 +295,3 @@ const part2Answer = (): number => {
 // console.log(JSON.stringify(gameObject, null, 2), "gameObject");
 console.log(part1Answer());
 console.log(part2Answer());
-// Step 2: Record numbers adjacent to each symbol. (Flip adjacent flag on number if recorded)
